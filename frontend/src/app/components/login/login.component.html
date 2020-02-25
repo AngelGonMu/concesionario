@@ -1,0 +1,26 @@
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+        <div class="card-header">
+          Iniciar
+        </div>
+        <div class="card-body">
+            <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+                <div class="alert alert-danger" role="alert" [hidden]="!error">
+                    El email o la contraseña son incorrectos
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" name="email" class="form-control" id="inputEmail" [(ngModel)]="form.email" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword">Contraseña</label>
+                  <input type="password" name="password" class="form-control" id="inputPassword" [(ngModel)]="form.password" required>
+                </div>
+                <div class="form-group">
+                    <small>¿No tienes cuenta? Registrate <a routerLink="/register">aquí</a>.</small>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Iniciar</button>
+            </form>
+        </div>
+    </div>
+</div>

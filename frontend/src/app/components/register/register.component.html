@@ -1,0 +1,24 @@
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+        <div class="card-header">
+          Registrar
+        </div>
+        <div class="card-body">
+            <form #registerForm=ngForm (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="inputName">Nombre</label>
+                    <input type="text" name="name" class="form-control" id="inputName" [(ngModel)]="form.name" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" name="email" class="form-control" id="inputEmail" [(ngModel)]="form.email" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword">Contraseña</label>
+                  <input type="password" name="password" class="form-control" id="inputPassword" [(ngModel)]="form.password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
